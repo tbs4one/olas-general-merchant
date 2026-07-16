@@ -195,14 +195,14 @@ body {
 
 .brand-text strong {
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
 .brand-text small {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: rgba(184, 228, 245, 0.9);
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 .nav-menu {

@@ -306,7 +306,7 @@ function initOrderForm() {
       return;
     }
 
-    const subject = encodeURIComponent('Order from Olas General Merchant');
+    const subject = encodeURIComponent('Order from OLAS Technologies & General Merchandise');
     const body = encodeURIComponent(formatOrderMessage(data));
     const email = 'azomolara10@gmail.com';
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
@@ -340,7 +340,7 @@ function getOrderData() {
 }
 
 function formatOrderMessage(data) {
-  let msg = `🛒 *Order for Olas General Merchant*\n\n`;
+  let msg = `🛒 *Order for OLAS Technologies & General Merchandise*\n\n`;
   msg += `👤 Name: ${data.name}\n`;
   msg += `📞 Phone: ${data.phone}\n`;
   if (data.email) msg += `📧 Email: ${data.email}\n`;
