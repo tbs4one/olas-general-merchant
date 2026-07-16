@@ -4,10 +4,12 @@
 
 const OFFICIAL = {
   name: 'Olas General Merchant and Store',
-  email: 'tbs4one@live.com',
-  phone: '08038387515',
-  phoneDisplay: '0803 838 7515',
-  whatsapp: '2348038387515',
+  email: 'azomolara10@gmail.com',
+  phone: '08161780384',
+  phone2: '08054667032',
+  phoneDisplay: '0816 178 0384',
+  phone2Display: '0805 466 7032',
+  whatsapp: '2348161780384',
 };
 
 // ── Product Catalog — Real Nigerian Brands ───
