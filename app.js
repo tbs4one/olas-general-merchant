@@ -1,9 +1,9 @@
 /* ============================================
-   OLAS Technologies & General Merchandise — App Logic
+   Olas General Merchant and Store — App Logic
    ============================================ */
 
 const OFFICIAL = {
-  name: 'OLAS Technologies & General Merchandise',
+  name: 'Olas General Merchant and Store',
   email: 'tbs4one@live.com',
   phone: '08038387515',
   phoneDisplay: '0803 838 7515',
@@ -314,7 +314,7 @@ function initOrderForm() {
       return;
     }
 
-    const subject = encodeURIComponent('Order from OLAS Technologies & General Merchandise');
+    const subject = encodeURIComponent('Order from Olas General Merchant and Store');
     const body = encodeURIComponent(formatOrderMessage(data));
     window.location.href = `mailto:${OFFICIAL.email}?subject=${subject}&body=${body}`;
     showToast('Order prepared! Your email app will open.');
@@ -347,7 +347,7 @@ function getOrderData() {
 }
 
 function formatOrderMessage(data) {
-  let msg = `🛒 *Order for OLAS Technologies & General Merchandise*\n\n`;
+  let msg = `🛒 *Order for Olas General Merchant and Store*\n\n`;
   msg += `👤 Name: ${data.name}\n`;
   msg += `📞 Phone: ${data.phone}\n`;
   if (data.email) msg += `📧 Email: ${data.email}\n`;
