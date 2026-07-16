@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse rice, flour, drinks and gift items at Olas General Merchant, Ajegunle Lagos." />
+  <title>Products | Olas General Merchant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-loader" id="pageLoader">
+    <img src="assets/logo.svg" alt="Olas General" class="loader-logo-img" />
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/logo.svg" alt="Olas General Merchant" class="brand-logo" />
+        <span class="brand-text">
+          <strong>Olas General</strong>
+          <small>Merchant & Store</small>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="brands.html" class="nav-link">Brands</a></li>
+        <li><a href="products.html" class="nav-link active">Products</a></li>
+        <li><a href="drinks.html" class="nav-link">Drinks</a></li>
+        <li><a href="order.html" class="nav-link">Order</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="order.html" class="btn btn-primary nav-cta">Order Now</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-banner page-banner-media">
+      <div class="page-banner-image">
+        <img src="assets/premium-goods.jpg" alt="Premium groceries, rice, flour and everyday essentials" />
+        <div class="page-banner-shade"></div>
+      </div>
+      <div class="container page-banner-content">
+        <span class="section-tag">Our Range</span>
+        <h1 class="section-title">Premium Goods &amp; Essentials</h1>
+        <p class="section-desc">From staple foods to refreshing drinks ù everything your home and business needs.</p>
+      </div>
+    </section>
+
+    <section class="essentials-showcase">
+      <div class="container essentials-showcase-grid">
+        <figure class="essentials-photo">
+          <img src="assets/rice-essentials.jpg" alt="Premium rice bags and grocery staples" loading="lazy" />
+          <figcaption>Quality rice &amp; kitchen staples</figcaption>
+        </figure>
+        <figure class="essentials-photo">
+          <img src="assets/products/groceries.jpg" alt="Fresh market goods and store essentials" loading="lazy" />
+          <figcaption>Everyday goods for home &amp; business</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="categories section">
+      <div class="container">
+        <div class="category-tabs" id="categoryTabs">
+          <button class="tab active" data-category="all">All Items</button>
+          <button class="tab" data-category="rice">Rice</button>
+          <button class="tab" data-category="flour">Flour</button>
+          <button class="tab" data-category="drinks">Drinks</button>
+          <button class="tab" data-category="gifts">Gift Items</button>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.svg" alt="Olas General" class="footer-logo" />
+        <div>
+          <strong>Olas General Merchant & Store Items</strong>
+          <p>Quality goods. Expert service. Ajegunle, Lagos.</p>
+        </div>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> Olas General Merchant. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="orderModal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <div class="modal-product" id="modalProduct"></div>
+      <form class="quick-order-form" id="quickOrderForm">
+        <div class="form-group">
+          <label>Quantity</label>
+          <div class="qty-control">
+            <button type="button" class="qty-btn" data-action="minus">?</button>
+            <input type="number" id="quickQty" value="1" min="1" max="99" />
+            <button type="button" class="qty-btn" data-action="plus">+</button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Add to Order</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

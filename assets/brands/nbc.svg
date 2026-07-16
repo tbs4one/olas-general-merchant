@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" role="img" aria-label="Nigerian Bottling Company">
+  <rect width="200" height="80" rx="8" fill="#e61a27"/>
+  <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="11" fill="#ffffff" letter-spacing="1">NIGERIAN BOTTLING COMPANY</text>
+  <text x="100" y="55" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="22" fill="#ffffff" letter-spacing="1">NBC</text>
+  <text x="100" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#ffcccc">Coca-Cola · Fanta · Sprite · Eva</text>
+</svg>
