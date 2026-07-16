@@ -1,0 +1,37 @@
+---
+description: Always sync this project to GitHub (tbs4one)
+alwaysApply: true
+---
+
+# GitHub sync (required)
+
+After completing meaningful code or content changes in this project, **always** commit and push to GitHub without waiting for the user to ask.
+
+## Account
+
+- GitHub username: `tbs4one`
+- Commit author email: `tbs4one@live.com`
+- Commit author name: `tbs4one`
+- Remote repo: `https://github.com/tbs4one/olas-general-merchant.git` (`origin`)
+
+## How to commit (do not change git config)
+
+Never run `git config`. For every commit, set identity only for that command:
+
+```bash
+git -c user.name="tbs4one" -c user.email="tbs4one@live.com" commit -m "message"
+```
+
+## Sync steps
+
+1. `git status` / `git diff` / recent `git log` (parallel)
+2. Stage relevant files (`git add`); do not commit secrets (`.env`, credentials)
+3. Commit with a clear message (why over what)
+4. `git push -u origin HEAD` (or `git push` if tracking exists)
+5. If push fails because remote is ahead, pull/rebase only if safe; otherwise tell the user
+
+## Scope
+
+- Sync after features, fixes, design updates, and asset changes
+- Skip empty commits when there is nothing to sync
+- Prefer one sync at the end of a task rather than many tiny pushes mid-task
