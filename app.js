@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMarquee();
   initOrderForm();
   initModal();
-  initLiveChat();
   initScrollAnimations();
 
   const yearEl = document.getElementById('year');
@@ -435,99 +434,6 @@ function showToast(message) {
   toast.textContent = message;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 3000);
-}
-
-// ── Live Chat (24hrs) ────────────────────────
-function initLiveChat() {
-  if (document.getElementById('liveChat')) return;
-
-  const root = document.createElement('div');
-  root.id = 'liveChat';
-  root.className = 'live-chat';
-  root.innerHTML = `
-    <button type="button" class="live-chat-toggle" id="liveChatToggle" aria-label="Open live chat">
-      <span class="live-chat-pulse"></span>
-      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.2L4 17.2V4h16v12z"/><circle cx="8" cy="10" r="1.2" fill="currentColor"/><circle cx="12" cy="10" r="1.2" fill="currentColor"/><circle cx="16" cy="10" r="1.2" fill="currentColor"/></svg>
-      <span class="live-chat-label">Chat 24hrs</span>
-    </button>
-    <div class="live-chat-panel" id="liveChatPanel" hidden>
-      <div class="live-chat-header">
-        <div>
-          <strong>OLAS Technologies &amp; General Merchandise</strong>
-          <span class="live-chat-status"><i></i> Online · 24 hours</span>
-        </div>
-        <button type="button" class="live-chat-close" id="liveChatClose" aria-label="Close chat">&times;</button>
-      </div>
-      <div class="live-chat-body" id="liveChatBody">
-        <div class="live-chat-bubble bot">
-          Welcome to <strong>OLAS Technologies &amp; General Merchandise</strong>. We're online 24 hours. How can we help you today?
-        </div>
-        <div class="live-chat-bubble bot">
-          Official line: <a href="tel:${OFFICIAL.phone}">${OFFICIAL.phoneDisplay}</a><br />
-          Official email: <a href="mailto:${OFFICIAL.email}">${OFFICIAL.email}</a>
-        </div>
-      </div>
-      <div class="live-chat-actions">
-        <a href="tel:${OFFICIAL.phone}" class="live-chat-quick">Call</a>
-        <a href="mailto:${OFFICIAL.email}" class="live-chat-quick">Email</a>
-        <a href="https://wa.me/${OFFICIAL.whatsapp}" class="live-chat-quick whatsapp" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-      <form class="live-chat-form" id="liveChatForm">
-        <input type="text" id="liveChatInput" placeholder="Type your message…" autocomplete="off" required />
-        <button type="submit" class="live-chat-send" aria-label="Send message">Send</button>
-      </form>
-    </div>
-  `;
-  document.body.appendChild(root);
-
-  const toggle = document.getElementById('liveChatToggle');
-  const panel = document.getElementById('liveChatPanel');
-  const closeBtn = document.getElementById('liveChatClose');
-  const form = document.getElementById('liveChatForm');
-  const input = document.getElementById('liveChatInput');
-  const body = document.getElementById('liveChatBody');
-
-  function openChat() {
-    panel.hidden = false;
-    root.classList.add('open');
-    input.focus();
-  }
-
-  function closeChat() {
-    panel.hidden = true;
-    root.classList.remove('open');
-  }
-
-  toggle.addEventListener('click', () => {
-    if (panel.hidden) openChat();
-    else closeChat();
-  });
-  closeBtn.addEventListener('click', closeChat);
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const text = input.value.trim();
-    if (!text) return;
-
-    const userBubble = document.createElement('div');
-    userBubble.className = 'live-chat-bubble user';
-    userBubble.textContent = text;
-    body.appendChild(userBubble);
-
-    const reply = document.createElement('div');
-    reply.className = 'live-chat-bubble bot';
-    reply.textContent = 'Thanks! Connecting you to our 24hr team via WhatsApp…';
-    body.appendChild(reply);
-    body.scrollTop = body.scrollHeight;
-
-    const message = encodeURIComponent(
-      `Hello OLAS Technologies & General Merchandise,\n\n${text}\n\n— Sent from website live chat`
-    );
-    input.value = '';
-    setTimeout(() => {
-      window.open(`https://wa.me/${OFFICIAL.whatsapp}?text=${message}`, '_blank');
-    }, 500);
-  });
 }
 
 // ── Scroll Animations ────────────────────────
